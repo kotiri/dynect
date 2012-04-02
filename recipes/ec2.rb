@@ -37,7 +37,7 @@ new_fqdn = "#{new_hostname}.#{node["dynect"]["domain"]}"
 dynect_rr new_hostname do
   record_type "CNAME"
   fqdn new_fqdn
-  rdata({ "cname" => "#{node[:ec2][:public_hostname]}." })
+  rdata({ "cname" => "#{node['ec2']['public_hostname']}." })
   customer node["dynect"]["customer"]
   username node["dynect"]["username"]
   password node["dynect"]["password"]
